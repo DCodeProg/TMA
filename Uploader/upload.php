@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['fichier'])) {
     $dossierCible = 'uploads/';
     $nomFichier = basename($_FILES['fichier']['name']);
     $cheminFichier = $dossierCible . $nomFichier;
-    $typesAutorises = ['image/jpeg', 'image/png', 'application/pdf'];
+    $typesAutorises = ['application/pdf'];
     
     if (!in_array($_FILES['fichier']['type'], $typesAutorises)) {
         die("Format de fichier non autorisé.");
